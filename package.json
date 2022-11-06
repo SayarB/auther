@@ -9,7 +9,8 @@
     "dev": "ts-node src/app.ts",
     "build": "npx tsc",
     "prod": "node build/app.js",
-    "lint": "eslint . --ext .ts --fix"
+    "lint": "eslint . --ext .ts --fix",
+    "migrations:create": "typeorm migration:create"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",
@@ -24,6 +25,9 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "pg": "^8.8.0",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.3.10"
   }
 }

@@ -1,6 +1,9 @@
+import { User } from './../models/User'
 import { Request, Response } from 'express'
-const getUsers = (req: Request, res: Response) => {
-    return res.json([{ name: 'sayar' }, { name: 'aman' }])
+import userServices from '../services/userServices'
+const getUsers = async (req: Request, res: Response) => {
+    const users: User[] = await userServices.getAllUsers()
+    return res.json(users)
 }
 
 export default { getUsers }

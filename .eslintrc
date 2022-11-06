@@ -8,8 +8,8 @@
     "plugin:@typescript-eslint/recommended"
   ],
   "rules": {
-    "indent": ["error", 4],
-    "quotes": ["error", "single"],
-    "semi": ["error", "never"]
+    "indent": ["warn", 4],
+    "quotes": ["warn", "single"],
+    "semi": ["warn", "never"]
   }
 }
