@@ -10,7 +10,8 @@
     "build": "npx tsc",
     "prod": "node build/app.js",
     "lint": "eslint . --ext .ts --fix",
-    "migrations:create": "typeorm migration:create"
+    "migrations:create": "npx typeorm-ts-node-esm migration:generate ./src/migrations/init -d ./src/config/db.ts",
+    "migrations:run":"npx typeorm-ts-node-esm migration:run -d ./src/config/db.ts"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",

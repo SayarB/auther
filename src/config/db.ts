@@ -3,7 +3,7 @@ import { URL } from 'url'
 import dotenv from 'dotenv'
 import { User } from '../models/User'
 dotenv.config()
-const dbUrl = new URL(process.env.DATABASE_URL!)
+const dbUrl = new URL(process.env.DATABASE_URL || '')
 const routingId = dbUrl.searchParams.get('options')
 dbUrl.searchParams.delete('options')
 
@@ -22,6 +22,6 @@ export const AppDataSource = new DataSource({
     migrations: [
         './src/migrations/**/*.ts'
     ],
-    synchronize:false
+    synchronize:true
 
 })
